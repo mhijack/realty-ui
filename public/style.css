@@ -23,9 +23,15 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1; }
+
 .heading-2 {
   font-size: 4rem;
-  font-style: italic; }
+  font-style: italic;
+  line-height: 1; }
   .heading-2--light {
     color: #f9f7f6; }
   .heading-2--dark {
@@ -72,15 +78,91 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1 / -1; }
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center; }
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 5rem; }
+  .nav-btn::before, .nav-btn::after {
+    content: '';
+    background-color: #fff;
+    display: block;
+    height: 2px;
+    width: 4.5rem; }
+  .nav-btn::before {
+    transform: translateY(-1.3rem); }
+  .nav-btn::after {
+    transform: translateY(1.3rem); }
 
 .header {
-  background-color: #54483A;
-  grid-column: full-start / col-end 6; }
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(./img/hero.jpeg);
+  background-position: center;
+  padding: 8rem;
+  grid-column: full-start / col-end 6;
+  display: grid;
+  grid-template-rows: 1fr min-content min-content 1fr;
+  grid-template-columns: max-content;
+  grid-row-gap: 1.5rem;
+  justify-content: center; }
+  .header__logo {
+    height: 3rem;
+    justify-self: center; }
+  .header__btn {
+    margin-top: 3rem;
+    align-self: start;
+    justify-self: start; }
+  .header__seenon-text {
+    color: #aaa;
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 1fr; }
+    .header__seenon-text::before, .header__seenon-text::after {
+      content: "";
+      background-color: currentColor;
+      height: 1px;
+      width: 90%;
+      display: block;
+      justify-self: center;
+      align-self: center; }
+  .header__seenon-logo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
+    justify-items: center; }
+    .header__seenon-logo img {
+      height: 2.5rem;
+      filter: brightness(65%); }
 
 .realtors {
   background-color: #101d2c;
-  grid-column: col-start 7 / full-end; }
+  padding: 3rem;
+  grid-column: col-start 7 / full-end;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-row-gap: 2rem;
+  justify-items: center; }
+  .realtors__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5vh;
+    align-items: center; }
+  .realtors__img {
+    width: 7rem;
+    border-radius: 50%;
+    display: block; }
+  .realtors__sold {
+    text-transform: uppercase;
+    color: #aaa;
+    margin-top: -3px; }
 
 .features {
   margin: 8rem 0;
@@ -261,4 +343,29 @@ body {
 
 .footer {
   background-color: #101d2c;
-  grid-column: full-start / full-end; }
+  grid-column: full-start / full-end;
+  padding: 2.5rem; }
+
+.nav {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  align-items: center; }
+  .nav__link:link, .nav__link:visited {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    padding: 1.5rem;
+    display: block;
+    transition: transform 0.1s; }
+  .nav__link:hover, .nav__link:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-0.3rem); }
+
+.copyright {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
+  color: #fff; }
